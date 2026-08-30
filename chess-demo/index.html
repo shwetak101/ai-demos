@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>♟ Chess Demo</h1>
+    <p class="subtitle">Local two-player hot-seat chess — implements BRD-001</p>
+
+    <div class="status-bar">
+      <div id="turn-indicator" class="turn-indicator"></div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="board-wrapper">
+      <div id="board" class="board" role="grid" aria-label="Chess board"></div>
+    </div>
+
+    <div class="controls">
+      <button id="new-game-btn" type="button">New Game</button>
+      <button id="resign-btn" type="button">Resign</button>
+    </div>
+
+    <ol id="move-history" class="move-history" aria-label="Move history"></ol>
+  </main>
+
+  <div id="promotion-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Choose promotion piece">
+    <div class="modal-content">
+      <p>Promote pawn to:</p>
+      <div class="promotion-choices" id="promotion-choices"></div>
+    </div>
+  </div>
+
+  <div id="game-over-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Game over">
+    <div class="modal-content">
+      <p id="game-over-text"></p>
+      <button id="game-over-new-game-btn" type="button">New Game</button>
+    </div>
+  </div>
+
+  <script src="chess-engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
