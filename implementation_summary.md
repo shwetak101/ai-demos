@@ -1,0 +1,1 @@
+This demo converts natural language requirements into a simplified Power App specification using Streamlit.
